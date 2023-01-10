@@ -42,7 +42,7 @@ function sendMessage(text, message_side) {
 
 function greet() {
     setTimeout(function () {
-        return sendMessage("Kochat 데모에 오신걸 환영합니다.", 'left');
+        return sendMessage("ICHIGO 에 오신걸 환영합니다.", 'left');
     }, 1000);
 
     setTimeout(function () {
@@ -63,7 +63,7 @@ function setUserName(username) {
             return sendMessage("반갑습니다." + username + "님. 닉네임이 설정되었습니다.", 'left');
         }, 1000);
         setTimeout(function () {
-            return sendMessage("저는 각종 여행 정보를 알려주는 여행봇입니다.", 'left');
+            return sendMessage("학습에폭 2000개.", 'left');
         }, 2000);
         setTimeout(function () {
             return sendMessage("날씨, 미세먼지, 여행지, 맛집 정보에 대해 무엇이든 물어보세요!", 'left');
@@ -82,7 +82,7 @@ function setUserName(username) {
 
 function requestChat(messageText, url_pattern) {
     $.ajax({
-        url: "http://0.0.0.0:8080/" + url_pattern + '/' + userName + '/' + messageText,
+        url: "http://127.0.0.1:8080/" + url_pattern + '/' + userName + '/' + messageText,
         type: "GET",
         dataType: "json",
         success: function (data) {
@@ -115,7 +115,7 @@ function onSendButtonClicked() {
     } else {
         if (messageText.includes('안녕')) {
             setTimeout(function () {
-                return sendMessage("안녕하세요. 저는 Kochat 여행봇입니다.", 'left');
+                return sendMessage("안녕하세요. 저는 ICHIGO입니다.", 'left');
             }, 1000);
         } else if (messageText.includes('고마워')) {
             setTimeout(function () {
