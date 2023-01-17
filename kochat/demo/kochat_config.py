@@ -21,6 +21,7 @@ BASE = {
     'batch_size': 1024,  # 미니배치 사이즈
     'max_len': 8,  # 문장의 최대 길이 (패드 시퀀싱)
     'delimeter': _,  # OS에 따른 폴더 delimeter
+    'num_workers': 8,
 
     'PAD': 0,  # PAD 토큰 값 (전체가 0인 벡터)
     'OOV': 1  # OOV 토큰 값 (전체가 1인 벡터)
