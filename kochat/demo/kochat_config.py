@@ -16,7 +16,7 @@ if root_dir[len(root_dir) - 1] != _: root_dir += _
 
 BASE = {
     'root_dir': root_dir.format(_=_),  # 백엔드 루트경로
-    'device': 'cuda:1',
+    'device': 'cuda:0', # cuda:1 --> 0=3080ti
     'vector_size': 128,  # 단어 벡터 사이즈
     'batch_size': 1024,  # 미니배치 사이즈
     'max_len': 8,  # 문장의 최대 길이 (패드 시퀀싱)
@@ -56,7 +56,7 @@ LOSS = {
 }
 
 GENSIM = {
-    'window_size': 2,  # 임베딩 학습시 사용되는 윈도우 사이즈
+    'window_size': 6,  # 임베딩 학습시 사용되는 윈도우 사이즈 - default 2
     'workers': 12,  # 학습시 사용되는 쓰레드 워커 갯수
     'min_count': 2,  # 데이터에서 min count보다 많이 등장해야 단어로 인지
     'sg': 1,  # 0 : CBOW = 1 \\ SkipGram = 2
